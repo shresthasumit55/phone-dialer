@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <h4>Phone Dialer</h4>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" 
+            integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+        <link rel="stylesheet" href="phone.css">
+
+    </head>
+    <body>
+        <div id="root">
+            <button id="btn-dial">Dialer</button>
+            <button id="btn-contact-list">Contact List</button>
+            <button id="btn-contact-form">Contact</button>
+            <div id="content">
+                <div id="dialer">
+                    Dialer 
+                    <form class="pure-form pure-form-stacked">
+                        <input id="dialer-textbox">
+                        <div class="row">
+                            <button id="btn-one">1</button>
+                            <button id="btn-two">2</button>
+                            <button id="btn-three">3</button>
+                        </div>
+                        <div class="row">
+                                <button id="btn-four">4</button>
+                                <button id="btn-five">5</button>
+                                <button id="btn-six">6</button>
+                            </div>
+                        <div class="row">
+                                    <button id="btn-seven">7</button>
+                                    <button id="btn-eight">8</button>
+                                    <button id="btn-nine">9</button>
+                        </div>
+                        <div class="row">
+                                <button id="btn-seven">*</button>
+                                <button id="btn-eight">0</button>
+                                <button id="btn-nine">#</button>
+                    </div>
+                    <div class="row">
+                            <button id="dial-btn">Dial</button>
+                            <button id="dialer-clear-btn">Clear</button>
+                </div>
+                    </form>
+                    
+                </div>
+                <div id="contact-list">
+                    Contact List
+
+                </div>
+                <div id="contact-form">
+                        Add Contact
+                        <form id="contact-detail-form" class="pure-form pure-form-stacked">
+                                <label for="name">Name:</label>
+                                <input id="name" placeholder="Your Name">
+                                
+                                <label for="phone">Phone Number:</label>
+                                <input id="phone" placeholder="Your Phone Number">
+                    
+                                <label for="email">Email id:</label>
+                                <input id="email" placeholder="Your Email">
+                    
+                                <button id="submit-contact" type="submit">Add Contact </button>
+                                <button >Clear </button>
+                            </form>
+                </div>
+
+        
+        
+    </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="phone.js"></script>
+    </body>
+</html>
