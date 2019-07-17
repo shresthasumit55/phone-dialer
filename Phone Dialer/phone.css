@@ -3,11 +3,11 @@ ul {list-style-type:none; margin:0; padding:0}
 li {margin:0; padding:0}
 .listbutton{width: auto; height: 25px; margin-left: 3px; margin-top: 4px; border:none}
 .tabBtn{border:none; width:155px; margin-left: -4px;    margin-right: -1px; }
-.tabBtn:hover {     background-color: brown;  }
+.tabBtn:hover { border: 2px solid black;  }
 #root{width:900px}
 .contactBox { width:280px; margin-bottom:20px !important}
 .dialBtn { width:197.5px; font-weight: bold; }
 #dialer-textbox {width: 406px}
 .buttonContact {background-color: #e7e7e7; color: black; border:2px solid black; display: inline-block;}
-#gesture-area {width:300px; height:300px; margin-top:20px; background: silver; text-align: center; vertical-align: middle; line-height: 300px; }
-#swipe-area {width:300px; height:50px; margin-top:20px; background: gray; text-align: center; vertical-align: middle; line-height: 50px;}
+#gesture-area {width:300px; height:300px; margin-top:-16px;margin-bottom:20px; background: silver; text-align: center; vertical-align: middle; line-height: 300px; }
+#swipe-area {width:300px; height:50px; -moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;margin-top:20px; background: gray; text-align: center; vertical-align: middle; line-height: 50px;}

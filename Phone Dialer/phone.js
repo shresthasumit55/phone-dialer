@@ -1,10 +1,11 @@
-currentTab=0;
 
 $("document").ready(function () {
     $("#dialer").show();
     $("#contact-list").hide();
     $("#contact-form").hide();
     $("#test-gesture").hide();
+    currentTab=0;
+    changeColor(btnList[currentTab]);
 })
 
 $("#btn-dial").click(function () {
@@ -13,6 +14,7 @@ $("#btn-dial").click(function () {
     $("#contact-form").hide();
     $("#test-gesture").hide();
     currentTab=0;
+    changeColor(btnList[currentTab]);
 })
 
 $("#btn-contact-list").click(function () {
@@ -21,6 +23,7 @@ $("#btn-contact-list").click(function () {
     $("#contact-form").hide();
     $("#test-gesture").hide();
     currentTab=1;
+    changeColor(btnList[currentTab]);
 })
 
 $("#btn-contact-form").click(function () {
@@ -29,6 +32,7 @@ $("#btn-contact-form").click(function () {
     $("#contact-form").show();
     $("#test-gesture").hide();
     currentTab=2;
+    changeColor(btnList[currentTab]);
 })
 
 $("#btn-test-gesture").click(function () {
@@ -37,9 +41,10 @@ $("#btn-test-gesture").click(function () {
     $("#contact-form").hide();
     $("#test-gesture").show();
     currentTab=3;
+    changeColor(btnList[currentTab]);
 })
 
-
+btnList = ["btn-dial","btn-contact-list","btn-contact-form","btn-test-gesture"]
 tabList = ["dialer","contact-list","contact-form","test-gesture"]
 
 var contactList = ["Michael Scott", "Dwight Shrute"];
@@ -103,14 +108,14 @@ $("#gesture-area").mouseup(function(){
 
     if (newX>mouseX ){
         if (newY>mouseY || newY<mouseY)
-            $("#gesture-output").val("swipe diagonal");
+            $("#gesture-output").val("swipe right"); //needs to be changed to swipe up-right, down-right, diagonal or sth
         else
             $("#gesture-output").val("swipe right");
         
     }
     else if (newX<mouseX){
         if (newY>mouseY || newY<mouseY)
-            $("#gesture-output").val("swipe diagonal");
+            $("#gesture-output").val("swipe left");
         else
             $("#gesture-output").val("swipe left");
     }
@@ -149,15 +154,16 @@ $("#swipe-area").mouseup(function(event){
         }
         changeTab(tabList[currentTab]);
     }
-    if (newX==mouseX){
+    /*if (newX==mouseX){
         $("#gesture-output").val("mouse up");
-    }
+    }*/
 })
 
 function changeTab(tab_id){
-    tabList.forEach(element => {
+    tabList.forEach((element,index) => {
         if (element==tab_id){
             $("#"+element).show();
+            changeColor(btnList[index]);
         }
         else{
             $("#"+element).hide();
@@ -165,3 +171,30 @@ function changeTab(tab_id){
     });
 }
 
+function changeColor(btn_id){
+    btnList.forEach(element => {
+        if (element==btn_id){
+            $("#"+element).css("background-color","brown");
+        }
+        else{
+            $("#"+element).css("background-color","grey");
+        }
+    });
+}
+
+$(document).keydown(function(event){
+    if (event.key=='ArrowLeft'){
+        currentTab = currentTab - 1;
+        if (currentTab<0){
+            currentTab=tabList.length-1;
+        }
+        changeTab(tabList[currentTab]);
+    }
+    else if(event.key=='ArrowRight'){
+        currentTab = currentTab + 1;
+        if (currentTab==tabList.length){
+            currentTab=0;
+        }
+        changeTab(tabList[currentTab]);
+    }
+})
