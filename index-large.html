@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="phone-large.css">
+
+</head>
+
+<body>
+    <div id="root">
+        <button id="btn-dial" class=tabBtn>Dialer</button>
+        <button id="btn-contact-list" class=tabBtn>Contact List</button>
+        <button id="btn-contact-form" class=tabBtn>Contact</button>
+        <button id="btn-test-gesture" class=tabBtn>Test Gestures</button>
+        <div id="content">
+            <div id="dialer">
+                <h2>Dialer</h2>
+                <form class="pure-form pure-form-stacked">
+                    <input id="dialer-textbox">
+                    &nbsp;
+                    <div>
+                        <button id="btn-one" type="button" class="phone-button">1</button>
+                        <button id="btn-two" type="button" class="phone-button">2</button>
+                        <button id="btn-three" type="button" class="phone-button">3</button>
+                    </div>
+                    <div>
+                        <button id="btn-four" type="button" class="phone-button">4</button>
+                        <button id="btn-five" type="button" class="phone-button">5</button>
+                        <button id="btn-six" type="button" class="phone-button">6</button>
+                    </div>
+                    <div>
+                        <button id="btn-seven" type="button" class="phone-button">7</button>
+                        <button id="btn-eight" type="button" class="phone-button">8</button>
+                        <button id="btn-nine" type="button" class="phone-button">9</button>
+                    </div>
+                    <div>
+                        <button id="btn-seven" type="button" class="phone-button">*</button>
+                        <button id="btn-eight" type="button" class="phone-button">0</button>
+                        <button id="btn-nine" type="button" class="phone-button">#</button>
+                    </div>
+                    &nbsp;
+                    <div>
+                        <button id="dial-btn" type="submit" class="dialBtn">Dial</button>
+                        <button id="dialer-clear-btn" type="reset" class="dialBtn">Clear</button>
+                    </div>
+                </form>
+
+            </div>
+            <div id="contact-list">
+                <h2>
+                    Contact List
+                </h2>
+                <ul>
+                </ul>
+
+            </div>
+            <div id="contact-form">
+                <h2>Add Contact</h2>
+                <form id="contact-detail-form" class="pure-form pure-form-stacked">
+                    <label for="name">Name</label>
+                    <input id="name" placeholder="Your Name" class=contactBox>
+
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" placeholder="Your Phone Number" class=contactBox>
+
+                    <label for="email">Email id</label>
+                    <input id="email" placeholder="Your Email" class=contactBox>
+
+                    <button id="submit-contact" type="button" class=buttonContact>Add Contact </button>
+                    <button type="reset" class=buttonContact>Clear </button>
+                </form>
+            </div>
+            <div id="change-style">
+                    <h2>High contrast mode</h2>
+                <button id="btn-style-change" class="style-change">change contrast</button>
+                <button id="btn-font-up" class="style-change">font up</button>
+                <button id="btn-font-down" class="style-change">font down</button>
+                
+
+                
+            </div>
+            <div id="swipe-area" title="Swipe left or right">Swipe</div>
+            <div><b>Keyboard keys</b> <br/>
+                Left arrow: left swipe <br/>
+                Right arrow: right swipe
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="phone-large.js"></script>
+</body>
+
+</html>
