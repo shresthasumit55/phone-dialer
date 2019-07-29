@@ -1,9 +1,10 @@
 
+mode=1 //normal mode, mode=0 is high contrast mode
 $("document").ready(function () {
     $("#dialer").show();
     $("#contact-list").hide();
     $("#contact-form").hide();
-    $("#test-gesture").hide();
+    $("#about-project").hide();
     currentTab=0;
     changeColor(btnList[currentTab]);
 })
@@ -12,40 +13,44 @@ $("#btn-dial").click(function () {
     $("#dialer").show();
     $("#contact-list").hide();
     $("#contact-form").hide();
-    $("#test-gesture").hide();
+    $("#about-project").hide();
     currentTab=0;
-    changeColor(btnList[currentTab]);
+    if(mode==1)
+        changeColor(btnList[currentTab]);
 })
 
 $("#btn-contact-list").click(function () {
     $("#dialer").hide();
     $("#contact-list").show();
     $("#contact-form").hide();
-    $("#test-gesture").hide();
+    $("#about-project").hide();
     currentTab=1;
-    changeColor(btnList[currentTab]);
+    if(mode==1)
+        changeColor(btnList[currentTab]);
 })
 
 $("#btn-contact-form").click(function () {
     $("#dialer").hide();
     $("#contact-list").hide();
     $("#contact-form").show();
-    $("#test-gesture").hide();
+    $("#about-project").hide();
     currentTab=2;
-    changeColor(btnList[currentTab]);
+    if(mode==1)
+        changeColor(btnList[currentTab]);
 })
 
-$("#btn-test-gesture").click(function () {
+$("#btn-about").click(function () {
     $("#dialer").hide();
     $("#contact-list").hide();
     $("#contact-form").hide();
-    $("#test-gesture").show();
+    $("#about-project").show();
     currentTab=3;
-    changeColor(btnList[currentTab]);
+    if(mode==1)
+        changeColor(btnList[currentTab]);
 })
 
-btnList = ["btn-dial","btn-contact-list","btn-contact-form","btn-test-gesture"]
-tabList = ["dialer","contact-list","contact-form","test-gesture"]
+btnList = ["btn-dial","btn-contact-list","btn-contact-form","btn-about"]
+tabList = ["dialer","contact-list","contact-form","about-project"]
 
 var contactList = ["Michael Scott", "Dwight Shrute"];
 var items = document.querySelector("ul");
@@ -163,7 +168,8 @@ function changeTab(tab_id){
     tabList.forEach((element,index) => {
         if (element==tab_id){
             $("#"+element).show();
-            changeColor(btnList[index]);
+            if (mode==1)
+                changeColor(btnList[index]);
         }
         else{
             $("#"+element).hide();
@@ -200,28 +206,73 @@ $(document).keydown(function(event){
 })
 
 $("#btn-style-change").click(function(){
-    if ($("body").hasClass("largeFont")){
-        $( "body" ).removeClass( "largeFont" );
+    mode=(mode-1)**2
+    if ($("body").hasClass("highContrast")){
+        $( "body" ).removeClass( "highContrast" );
+        $( "button" ).removeClass( "highContrast" );
+        $( ".buttonContact" ).css( "background-color","#e7e7e7");
+        $( ".buttonContact" ).css( "color","black");
+        $( ".buttonContact" ).css( "border", "2px solid black");
+        $( ".tabBtn" ).css( "background-color","");
+        $( ".tabBtn" ).css( "color","");
+        $( ".tabBtn" ).css( "border", "");
+        $(".contactBox").css("color","black");
+        $(".contactBox").css("background-color","white");
+        $("#dialer-textbox").css("color","black");
+        $("#dialer-textbox").css("background-color","white");
+        $("#swipe-area").css("color","");
+        $("#swipe-area").css("background-color","gray");
     }
     else{
-        $( "body" ).addClass( "largeFont" );
+        $( "body" ).addClass( "highContrast" );
+        $( "button" ).addClass( "highContrast" );
+        $( ".buttonContact" ).css( "background-color","black");
+        $( ".buttonContact" ).css( "color","white");
+        $( ".buttonContact" ).css( "border", "1px solid orange");
+        $( ".tabBtn" ).css( "background-color","black");
+        $( ".tabBtn" ).css( "color","white");
+        $( ".tabBtn" ).css( "border", "1px solid orange");
+        $(".contactBox").css("color","white");
+        $(".contactBox").css("background-color","black");
+        $("#dialer-textbox").css("color","white");
+        $("#dialer-textbox").css("background-color","black");
+        $("#swipe-area").css("color","white");
+        $("#swipe-area").css("background-color","black");
+    
     }
 })
 
 $("#btn-font-up").click(function(){
     var size = $( "body" ).css( "font-size");
     size=Number(size.substring(0, size.length - 2));
+
+    var swipeLocation = $("#swipe-div").css("top");
+    swipeLocation=Number(swipeLocation.substring(0, swipeLocation.length - 2));
+
+    var swipeWidth = $("#swipe-div").css("width");
+    swipeWidth=Number(swipeWidth.substring(0, swipeWidth.length - 2));
     
-    if (size<25){
+    
+    if (size<30){
         $( "body" ).css( "font-size", size+2+"px" )
+        $("#swipe-div").css("top",swipeLocation+95+"px");
+        $("#swipe-area").css("width",swipeWidth+20+"px");
     }
+
    
 })
 $("#btn-font-down").click(function(){
     var size = $( "body" ).css( "font-size");
     size=Number(size.substring(0, size.length - 2));
-    if (size>11){
-        $( "body" ).css( "font-size", size-2+"px" )
+    var swipeLocation = $("#swipe-div").css("top");
+    swipeLocation=Number(swipeLocation.substring(0, swipeLocation.length - 2));
+    var swipeWidth = $("#swipe-div").css("width");
+    swipeWidth=Number(swipeWidth.substring(0, swipeWidth.length - 2));
+
+    if (size>14){
+        $( "body" ).css( "font-size", size-2+"px" );
+        $("#swipe-div").css("top",swipeLocation-95+"px");
+        $("#swipe-area").css("width",swipeWidth-20+"px");
     }
    
 })

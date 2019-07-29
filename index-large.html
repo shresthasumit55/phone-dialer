@@ -12,8 +12,14 @@
         <button id="btn-dial" class=tabBtn>Dialer</button>
         <button id="btn-contact-list" class=tabBtn>Contact List</button>
         <button id="btn-contact-form" class=tabBtn>Contact</button>
-        <button id="btn-test-gesture" class=tabBtn>Test Gestures</button>
+        <button id="btn-about" class=tabBtn>About This Project</button>
         <div id="content">
+                <div id="change-style">
+                    <button id="btn-style-change" class="style-change">Change contrast</button><br/><br/>
+                    <button id="btn-font-up" class="style-change">Increase Font Size</button>
+                    <button id="btn-font-down" class="style-change">Decrease Font Size</button>  <br/><br/>
+                    <a href="index.html">Switch to the minimal site (with no support for low vision users) </a>
+                </div>
             <div id="dialer">
                 <h2>Dialer</h2>
                 <form class="pure-form pure-form-stacked">
@@ -71,20 +77,42 @@
                     <button type="reset" class=buttonContact>Clear </button>
                 </form>
             </div>
-            <div id="change-style">
-                    <h2>High contrast mode</h2>
-                <button id="btn-style-change" class="style-change">change contrast</button>
-                <button id="btn-font-up" class="style-change">font up</button>
-                <button id="btn-font-down" class="style-change">font down</button>
+            <div id="about-project">
+                <h2>
+                    About This Project
+                </h2>
+                <h3>Testing of the magnifier</h3>
+                <p>
+                    I used the magnifier provided by the Windows operating system. It allows magnifying the screen for different levels. I used the magnifier 
+                    to create a repository in github and adding collaborators to the project. It took a bit of time getting around the screen with the magnifier switched on. It was difficult to scroll through
+                    the pages at first. From my experience I think the magnifier is not a tool you would use if you are comfortable with the normal size of the contents on screen. It is not 
+                    comfortable to use the computer in a magnified mode if you are okay with the normal mode (100 % zoom). This means the zoom level should not greater or less than the level you are comfortable
+                    with. But for people with low vision, the magnifying feature is very helpful since it magnifies the content to the size they can easily see. Some amount of time is required to get used to
+                    scrolling, navigating with the magnifier switched on. 
+                </p>
+                <h3>Features added to the site for low vision users</h3>
+                <p>
+                    To assist the users with low vision, zooming feature was added to the application. The users who are unable to see the 
+                    contents of the page in its normal size can use this feature to view the contents in a more zoomed in format. Two buttons are added
+                    which increases and decreases the size of the contents and different users can set the size to their own preference. For now an upper limit has been set
+                    for the zoom level beyond which the contents cannot be zoomed.
+                </p>
+                <p>
+                    Along with the customizable content size, a high contrast mode was also added to the site. Some users find it difficult to read the text in the screen because they cannot
+                    easily differentiate the background color with the color of the contents in the front. So a button is provided to switch the high contrast mode on and off. The high contrast mode
+                    sets the background color to black and uses other colors to the content to create a high contrast with the background. This will be helpful to users having color blindness as well.
+                </p>
                 
 
-                
             </div>
+            
+            <div id="swipe-div">
             <div id="swipe-area" title="Swipe left or right">Swipe</div>
             <div><b>Keyboard keys</b> <br/>
                 Left arrow: left swipe <br/>
                 Right arrow: right swipe
             </div>
+        </div>
 
         </div>
 
