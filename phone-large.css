@@ -10,7 +10,7 @@ li {margin:0; padding:0;}
 .listbutton{width: auto; height: 25px; margin-left: 3px; margin-top: 4px; border:none;border:1px solid green}
 .tabBtn{border:none; height: 70px;width:270px; margin-left: -4px;    margin-right: -1px; margin-top:4px }
 .tabBtn:hover { border: 2px solid black;  }
-#root{width:1200px}
+#root{width:1230px}
 .contactBox { width:50%; margin-bottom:20px !important}
 .dialBtn { width:197.5px; font-weight: bold; }
 #dialer-textbox {width: 406px}
